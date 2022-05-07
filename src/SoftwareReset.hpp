@@ -1,4 +1,5 @@
-/* Copyright (C) 2016-2022 Giuseppe Masino (qub1750ul) <dev.gmasino@pm.me>
+/* Copyright (C) 2022 Tobias X. Vogel (tobiasvogel) <tobias.vogel@linux.com>
+ * and      2016-2022 Giuseppe Masino (qub1750ul) <dev.gmasino@pm.me>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the “Software”), to deal in
@@ -32,12 +33,20 @@ namespace softwareReset
 
 	inline void standard()
 	{
+#ifdef ARDUINO_AVR_UNO_WIFI_REV2
+		CPU_CCP = 0xD8;
+		WDT.CTRLA = 0x4;
+		while (true)
+		{
+		}
+#else
 		while(true)
 		{
 			wdt_enable(WDTO_15MS);
 			for(;;) {};
 		}
 	}
+#endif
 
 	// disable software reset after successful reset
 	void disable() __attribute__((naked)) __attribute__((section(".init3"))) ;

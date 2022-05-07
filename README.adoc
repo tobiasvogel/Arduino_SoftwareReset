@@ -1,24 +1,10 @@
 = Arduino Software Reset
-:badgesUrl: https://img.shields.io/badge
-
-image:{badgesUrl}/Project%20status-MAINTENANCE%20ONLY-orange.svg[Project Status]
-image:{badgesUrl}/license-MIT-brightgreen.svg[License] +
-image:{badgesUrl}/Arduino%20Library%20Specification%20-rev.%202.1-blue.svg[Arduino Lib Spec]
-image:{badgesUrl}/Arduino%20IDE%20compatibility-1.6.10+-blue.svg[Arduino IDE Compatibility] +
-image:{badgesUrl}/Keep%20a%20Changelog%20Specification-1.0.0-orange.svg[Changelog Standard]
-image:{badgesUrl}/Semantic%20Versioning%20Specification-2.0.0-orange.svg[SemVer Standard]
-
-[WARNING]
---
-This project is in *MAINTENANCE ONLY* mode. +
-This means i might accept some small PRs, but i don't plan on continuing
-development for the foreseeable future.
---
 
 == Description
 
-This library implements some software procedures allowing to
-reset AVR based microcontrollers from firmware.
+This library is a fork of Giuseppe Masino's (qub1750ul) <dev.gmasino@pm.me>
+SoftwareReset library with additional support for Arduino Uno Wifi Rev.2 boards
+allowing to reset AVR based microcontrollers from firmware using software procedures.
 
 At this time the library exposes two simple functions:
 
@@ -32,7 +18,11 @@ that just jumps to the begin of the program, without reinitializing.
 
 == License
 
-Copyright (C) 2016-2022 Giuseppe Masino (qub1750ul) <dev.gmasino@pm.me>
+
+The Orignal SoftwareReset library was released under the MIT License by Giuseppe Masino
+
+Copyright (C) 2022 Tobias X. Vogel (tobiasvogel) <tobias.vogel@linux.com> +
+and 2016-2022 Giuseppe Masino (qub1750ul) <dev.gmasino@pm.me>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the “Software”), to deal in
@@ -51,3 +41,4 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
+
